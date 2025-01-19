@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media Blocker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      width: 250px;
+      padding: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    input[type="number"] {
+      width: 60px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    #blockedSites {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Engelleme Seçenekleri</h3>
+  <label>
+    <input type="checkbox" id="blockYouTube" /> YouTube Shorts
+  </label>
+  <label>
+    <input type="checkbox" id="blockInstagram" /> Instagram Reels
+  </label>
+  <label>
+    <input type="checkbox" id="blockTikTok" /> TikTok
+  </label>
+  <label>
+    Zamanlı Engelleme (Dakika):
+    <input type="number" id="blockDuration" min="1" max="120" />
+  </label>
+  <button id="saveSettings">Ayarları Kaydet</button>
+
+  <div id="blockedSites">
+    <h4>Engellenmiş Siteler</h4>
+    <input type="text" id="newSite" placeholder="Yeni site URL" />
+    <button id="addSite">Ekle</button>
+    <ul id="siteList"></ul>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+{
+  "manifest_version": 3,
+  "name": "Advanced Social Media Blocker",
+  "version": "1.0",
+  "description": "Bu eklenti, YouTube Shorts, Instagram Reels ve TikTok'a erişimi engeller. Kullanıcı tercihlerine göre zamanlı engellemeye de izin verir.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "webNavigation",
+    "notifications"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/blocked-icon.png",
+      "48": "icons/blocked-icon.png",
+      "128": "icons/blocked-icon.png"
+    }
+  },
+  "icons": {
+    "16": "icons/blocked-icon.png",
+    "48": "icons/blocked-icon.png",
+    "128": "icons/blocked-icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/blocked-icon.png",
+        "popup.html"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "toggle-feature": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F"
+      },
+      "description": "Toggle the blocking feature on and off"
+    }
+  },
+  "optional_permissions": [
+    "http://*/*",
+    "https://*/*",
+    "webRequest",
+    "webRequestBlocking"
+  ],
+  "default_locale": "en",
+  "author": "Your Name",
+  "short_name": "Blocker",
+  "homepage_url": "https://your-extension-homepage.com",
+  "offline_enabled": true,
+  "minimum_chrome_version": "60",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "externally_connectable": {
+    "matches": [
+      "*://*.yourwebsite.com/*"
+    ]
+  },
+  "incognito": "split"
+}

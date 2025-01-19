@@ -1,0 +1,11 @@
+{
+    "appName": {
+      "message": "Advanced Social Media Blocker",
+      "description": "Name of the extension."
+    },
+    "appDescription": {
+      "message": "This extension blocks access to YouTube Shorts, Instagram Reels, and TikTok. It also allows for timed blocking based on user preferences.",
+      "description": "Description of the extension."
+    }
+  }
+  
